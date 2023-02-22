@@ -1,0 +1,12 @@
+.book{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.site{
+    border:1px solid black;
+   width:15%;
+    height:200px;
+    flex-wrap:wrap
+}
