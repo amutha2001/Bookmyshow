@@ -1,25 +1,69 @@
 import React, { useState } from 'react'
-import Button from "@mui/material/Button";
+import ChairIcon from '@mui/icons-material/Chair';
+import "./Home.css"
+import Button from '@mui/material/Button';
 
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const [color,setColor]=useState("red");
-     
+  const navigate= useNavigate();
+  const [color,setColor]=useState("grey");
+
+  const handlelogout=()=>{
+       localStorage.removeItem("userName");
+       localStorage.removeItem("password");
+      navigate("/")
+  } 
+       
+      
+    
   return (
     <>
-     <Home color={color} />   
-      <div className='book'>
-       
-        <Button
-            
-            type="submit"
-            variant="contained"
-            onClick={() => {setColor("green")}}
-          >
-            click
-      </Button>
+    <Button variant="contained" onClick={()=>handlelogout()}>LogOut</Button>
+    <div className='main'>
+        <div className='chair'>
+            <div className='book' > 
+                    <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+            <div className='book' > 
+                  <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+            <div className='book' > 
+                  <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+            <div className='book' > 
+                  <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+            <div className='book' > 
+                  <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+            <div className='book' > 
+                  <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+        </div>
+        <div className='chair2'>
+            <div className='book' > 
+                <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+            <div className='book' > 
+                <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+            <div className='book' > 
+                <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+            <div className='book' > 
+                <ChairIcon    style={{color:color  }} onClick={() => setColor("green")}  />
+            </div>
+        </div>
     </div>
-   </>     
+      
+  </>       
+ 
+     
+
+      
+      
+    
        
    
   )
